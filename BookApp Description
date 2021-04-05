@@ -1,0 +1,31 @@
+BookApp
+ 
+com.bookapp.service
+    interface BookService
+           void addBook(Book book);
+           List<Book> getBookByAuthor(String author) throws BookNotFoundException;
+ 
+   BookServiceImple implements BookService{
+      ArrayList<Book> bookList = new ArrayList<>();      
+      void addBook(Book book){
+           bookList.add(book);
+       }
+           List<Book> getBookByAuthor(String author) throws BookNotFoundException{
+ 
+
+             return newBookList;
+        }   
+ 
+
+}
+ 
+com.bookapp.model
+  Book -  title,author, bookid, category   paraa, getter,setter, tostring
+com.bookapp.client
+   UserMain
+    Scanner -> for loop 5 get title, author, create a book object   Book book = new Book(title, author,)
+     call addBook
+ 
+   
+com.bookapp.exceptions
+   BookNotFoundException
