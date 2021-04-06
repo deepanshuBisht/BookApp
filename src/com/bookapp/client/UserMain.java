@@ -15,7 +15,7 @@ class UserMain {
 
 		BookService service = new BookServiceImple();
 		Scanner sc = new Scanner(System.in);
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 2; i++) {
 			System.out.println("Enter Author Name");
 			String author = sc.next();
 			System.out.println("Enter Title Name");
@@ -33,7 +33,7 @@ class UserMain {
 			System.out.println(book);
 		}
 		System.out.println();
-		
+
 		System.out.println("By Author");
 		List<Book> bookByAuthor = null;
 		String author = sc.next();
@@ -46,15 +46,17 @@ class UserMain {
 		} catch (BookNotFoundException e) {
 			System.out.println(e.getMessage());
 		}
-		System.out.println();
+		System.out.println("By ID");
 		Book book;
 		try {
 			book = service.getById(10);
 			System.out.println(book);
 		} catch (BookNotFoundException e) {
 			System.out.println(e.getMessage());
+		} finally {
+			if (sc != null)
+				sc.close();
 		}
-		
 
 	}
 
